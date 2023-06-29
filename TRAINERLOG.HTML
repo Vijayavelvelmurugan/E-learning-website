@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <title>TRAINER LOGIN PAGE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="./bootstrap.min.css">
+<style>
+    img {
+        width: 100%;
+        height: auto;
+      }
+    h1{
+        color: lightgreen;
+    }
+    #flower{
+        padding-left: 900px;
+        color: black;
+    }
+    img {
+        width: 100%;
+        height: auto;
+      }
+    body{
+        background-color:black;
+        color: #949494;
+    }
+    .box{
+        padding: 10px 40px;
+        margin: 40px;
+        background-color: white;
+        border-radius: 50px;
+    }
+
+    #loss{
+        color: lightgreen;
+    }
+    label{
+        color: white;
+    }
+   #result{
+    color:red;
+   }
+   #pass{
+    color: red;
+   }
+   #vision{
+    color: red;
+   }
+   #pose{
+    color: red;
+   }
+   #lock{
+    color: red;
+   } 
+   .footer{
+    background-color:lightgreen;
+    color: black;
+   }
+   #pakka{
+    text-align: center;
+    border-color:lightgreen;
+    border-style: groove;
+   }
+   .btn{
+    color: black;
+    background-color: lightgreen;
+   }
+   #navbar-brand{
+    color: lightgreen;
+   }
+   label{
+    color: #949494;
+   }
+   .p{
+    color: lightgreen;
+   }
+   #kikky{
+    color: lightgreen;
+   }
+</style>
+<script>
+    function action(){
+        var password=document.getElementById("get").value
+        var upper=0
+        var lower=0
+        var num=0
+        var special=0
+        for(var i=0;i<password.length;i++){
+            if(("A"<=password[i]&&"Z">=password[i])){
+            upper++;
+        }   else if(("a"<=password[i]&&"z">=password[i])){
+            lower++;
+        }else if (("0"<=password[i]&&"9">=password[i])){
+            num++;
+        }else{
+            special++;
+        };
+    }
+    if ( (upper>=1)&&(lower=>1)&&(num>=1)&&(special>=1)&&(password.length>=8)&&(password.length<=16)){
+        document.getElementById("result").innerHTML="ITS A STRONG PASSWORD";
+        }
+        else if ( (upper>=1)&&(lower=>1)&&(num>=1)&&(password.length>=6)&&(password.length<=10)){
+            document.getElementById("result").innerHTML="IT'S A MEDIUM PASSWORD";
+    }else{
+        document.getElementById("result").innerHTML="IT'S NOT STRONG PASSWORD";
+    }
+        }
+            var otp=Math.floor(Math.random()*999999);
+            alert(otp);
+            function verify_otp(){
+                var user_otp=document.getElementById("otp").value;
+                if (otp==user_otp){
+                    window.location.href="TRAINERDETAIL.HTML";
+                }else{
+                    document.getElementById("pass").innerHTML=" INVAILD OTP";
+                }
+            }
+            function resend(){
+                window.location.href="TRAINERLOG.HTML";
+            }
+            function login(){
+                var db = {"mani":"Mani@123", "raja":"Raja@123", "tom":"Tom@123"};
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("get").value;
+                var array_key = Object.keys(db);
+                var   op = false;
+                
+                for (var i = 0; i<array_key.length; i++){
+                    if (array_key[i] == username){
+                        if (db[array_key[i]] ==password){
+                            var op = true;
+                        }
+                    }
+                }
+                
+                if (op == true){
+                    document.getElementById("lock").innerHTML = "VAILD USERNAME OR PASSWORD";
+                } else {
+                    document.getElementById("pose").innerHTML = "INVAILD USERNAME OR PASSWORD";
+                }
+            }
+</script>
+<body> <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div> <a href="./FRONTPAGE.HTML" class="navbar-brand" id="navbar-brand">EDUSPOT</a></div>
+            <ul class="nav navbar-nav">
+                <li><a>Home</a></li>
+                <li><a>About</a></li>       
+                <li><a>Contact us</a></li>
+                <li><a>Profile</a></li>
+            </ul>
+        </div>
+    <!-- main -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="./part5.jpg">
+                <h1>TRAINERS</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptas adipisci repellat officiis, nesciunt magnam ad deleniti cul
+                    Lorem ipsum dolor sit amet consectetur
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid corporis exercitationem asperiores nesciunt totam sapiente voluptatem, et ut repellat error pariatur suscipit non aspernatur adipisci provident expedita, earum esse quia! adipisicing elit. Ea, suscipit cumque. Cum nihil error assumenda, illum hic atque adipisci tenetur? Excepturi fugiat explicabo possimus ratione quo ea tempore fuga odio!pa repudiandae aliquam molestias facere voluptatum tempore perspiciatis expedita amet dolor qui ab</p>
+            </div>
+        <div class="col-md-6" id="pakka">
+    <div>
+        <h1 id="kikky">LOG IN</h1>
+    <LABEL>TRAINER ID:</LABEL>
+    <input class="box" type="text" id="username" placeholder="TRAINER ID"/>
+    <BR>
+    <LABEL>PASSWORD:</LABEL>
+    <input id="get" class="box" type="password" placeholder="PASSWORD"/>
+    <br>
+    <button class="btn" onclick="action()">PASS LEVEL</button>
+    <button onclick="login()" class="btn">CHECK ID</button>
+    <p id="result"></p>
+    <INPUT id="otp" class="box" type="number" placeholder="ENTER OTP"/>
+    <button class="btn" onclick="resend()">RESEND</button>
+    <p id="pass"></p>
+     <p id="pose"></p>
+    <p id="lock"></p>
+    <BR>
+     <a href="./FRONTPAGE.HTML">
+     <input class="btn" type="button" value="CANCEL"/></a>
+     <button class="btn" onclick="verify_otp()" id="otp">LOGIN</button>
+        <p id="pass"></p>
+      <p class="p"> ARE YOU NEW TRAINER?</p>
+      <BR>
+      <a href="TRAINERSIGN.HTML">
+      <input class="btn" type="button" value="CLICK HERE"/></a>
+                </div>
+                </div>
+                </div>
+                </div>
+                <!-- Footer -->
+                <div class="footer">
+                    <div class="container" id="kom">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h4 >About EDUSPOT</h4>
+                            <p class="py-3"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eaque corrupti, odit quibusdam, veritatis voluptatibus quidem at culpa impedit consectetur, expedita alias sunt. Porro ut reprehenderit iusto esse illum. Consectetur.
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem debitis eius, ut eos sequi iste voluptatibus magnam alias ratione voluptates ex, autem dolore doloribus accusamus animi quisquam obcaecati maxime.
+                            <a  href="./FRONTPAGE.HTML">Learn More</a></p>
+                          </div>
+                        </div>
+                      </div>
+                          <span id="flower">© Copyright Vijayavel
+                            Developed by <i>Vijayavel</i> 
+                          <span class="mt-3 mb-3 p-1">
+                            <span class="px-2"><i class="fa-brands fa-twitter"></i></span>
+                            <span class="px-2">   <i class="fa-brands fa-facebook"></i></span>
+                            <span  class="px-2"> <i class="fa-brands fa-instagram"></i></span>
+                            <span  class="px-2"> <i class="fa-brands fa-skype"></i></span>
+                            <span  class="px-2"> <i class="fa-brands fa-linkedin-in"></i></span>
+                           </span>
+                          </span>
+                    </div>
+            
+      <script src="./jquery.html"></script>
+      <script src="./bootstrap.min.js"></script>
+</body>
+</html>

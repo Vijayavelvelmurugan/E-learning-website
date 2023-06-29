@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <title>TRAINER SIGNUP</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="./bootstrap.min.css">
+<script>
+    function signup()
+        {
+            //phone
+            var num=document.getElementById("phn").value;
+            var phone_flag=false;
+          if((num>=6000000000)&&(num<=9999999999))
+          {
+            phone_flag=true;
+          }
+          //mail
+          var email=document.getElementById("mail").value;
+            var flag=false;
+            for(var i=0;i<email.length;i++){
+                if(email[i]=='@')
+                {
+                    flag=true;
+                }
+            }
+            //password
+            var password=document.getElementById("pass").value;
+            var upper=0;
+            var lower=0;
+            var num=0;
+            var special=0;
+            var pass_flag=false;
+        for(var i=0;i<password.length;i++)
+        {
+            if(('A'<=password[i])&&('Z'>=password[i])){
+                upper++;
+            }
+            else if(('a'<=password[i])&&('z'>=password[i])){
+                lower++;
+            }
+            else if(('0'<=password[i])&&('9'>=password[i])){
+                num++;
+            }
+            else {
+                special++;
+            }
+
+        }
+        if((upper>=1)&&(lower>=1)&&(num>=1)&&(special>=1)&&(password.length>=8)&&(password.length<=16))
+        {
+            pass_flag=true;
+        }
+        //confirm
+        var confirm_pass=document.getElementById("conform").value;
+        var confirm_flag=false;
+        if(password==confirm_pass)
+        {
+            confirm_flag=true;
+        }
+        //final
+        if((phone_flag==true)&&(confirm_flag=true)&&( pass_flag=true)&&(flag=true))
+        {
+            window.location.href="TRAINERLOG.HTML";
+        }
+        else{
+            document.getElementById("res").innerHTML="INVAILD DETAILS";
+
+        }
+            
+        }
+</script>
+<style>
+    .footer{
+        background-color:lightgreen;
+        color: black;
+       }
+    body{
+        background-color:black;
+        color: #949494;
+    }
+    h1{
+        color: white;
+        text-align: center;
+    }
+    .main{
+        text-align: center;
+    }
+    .tw{
+        color: white;
+    }
+    .td{
+        margin: 20px;
+        padding: 5px 10px;
+    }
+    #res{
+        color: red;
+    }
+    #flower{
+        padding-left: 900px;
+        color: black;
+    }
+    img {
+        width: 100%;
+        height: auto;
+      }
+      #pakka{
+        text-align: center;
+        border-color:lightgreen;
+        border-style: groove;
+       }
+       #navbar-brand{
+        color: lightgreen;
+       }
+       #kikky{
+        color: lightgreen;
+       }
+       #btn{
+        color: black;
+        background-color:lightgreen;
+       }
+</style>
+<body>
+     <!-- Navbar-->
+     <div class="navbar navbar-inverse">
+        <div> <a href="./FRONTPAGE.HTML" class="navbar-brand" id="navbar-brand">EDUSPOT</a></div>
+            <ul class="nav navbar-nav">
+                <li><a>Home</a></li>
+                <li><a>About</a></li>       
+                <li><a>Contact us</a></li>
+                <li><a>Profile</a></li>
+            </ul>
+        </div>
+        <!-- main -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <H1 id="kikky">TRAINERS</H1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum ad et nemo fuga vel quae dolor laudantium, porro optio deserunt natus
+                        ab, asperiores consequatur eum perferendis cumque maxime, aut quidem? elit. 
+                        Sint beatae debitis, error temporibus corrupti in, iure facere aut Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus nobis sapiente eos doloremque ipsa sed illo dolorem odit harum natus dignissimos, voluptate omnis alias? Necessitatibus architecto voluptatem eaque porro. Illo?
+                         cumque quos illum eum magnam ipsa, perferendis qui ut Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius maiores doloremque, inventore repellendus amet quasi laudantium dolores perspiciatis at mollitia maxime 
+                         dolorem ipsam incidunt omnis? Ducimus totam distinctio amet animi? repudiandae vel reiciendis</p>
+                    <img src="./part7.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum ad et nemo fuga vel quae dolor laudantium, porro optio deserunt natus
+                         ab, asperiores consequatur eum perferendis cumque maxime, aut quidem? elit. 
+                         Sint beatae debitis, error temporibus corrupti in, iure facere aut Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus nobis sapiente eos doloremque ipsa sed illo dolorem odit harum natus dignissimos, voluptate omnis alias? Necessitatibus architecto voluptatem eaque porro. Illo?
+                          cumque quos illum eum magnam ipsa, perferendis qui ut Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius maiores doloremque, inventore repellendus amet quasi laudantium dolores perspiciatis at mollitia maxime 
+                          dolorem ipsam incidunt omnis? Ducimus totam distinctio amet animi? repudiandae vel reiciendis</p>
+                </div>
+                <div class="col-md-6" id="pakka">
+                    <h1 id="kikky">SIGN UP</h1>
+   <div class="main">
+    <form action="">
+        <LABEL class="tw">FIRST NAME:</LABEL>
+        <input class="td" type="TEXT" placeholder="FIRST NAME"/>
+        <BR>
+            <LABEL class="tw">LAST NAME:</LABEL>
+        <input class="td" type="text" placeholder="LAST NAME"/>
+        <BR>
+     <LABEL class="tw">TRAINER ID:</LABEL>
+     <input class="td" type="text" placeholder="TRAINER ID"/>
+     <BR>
+        <LABEL class="tw">PHONE NUMBER:</LABEL>
+        <input id="phn" class="td" type="number" placeholder="PHONE NUMBER"/>
+        <BR>
+            <LABEL class="tw">EMAIL:</LABEL>
+            <input id="mail" class="td" type="EMAIL" placeholder="EMAIL"/>
+            <BR>
+                <LABEL class="tw">QUALIFICATION:</LABEL>
+                <INPUT class="td" type="text" placeholder="QUALIFICATION"/>
+                <BR>
+                    <LABEL class="tw">EXPERIENCE:</LABEL>
+                    <input class="td" type="text" placeholder="EXPERIENCE"/>
+                    <BR>
+                        <LABEL class="tw">DOMAIN:</LABEL>
+                        <input class="td" type="text" placeholder="DOMAIN"/>
+                        <BR>
+                            <LABEL class="tw">PASSWORD:</LABEL>
+                            <input id="pass" class="td" type="password" placeholder="PASSWORD"/>
+                            <BR>
+                                <LABEL class="tw">CONFIRM PASSWORD:</LABEL>
+                                <input id="conform" class="td" type="password" placeholder="CONFIRM PASSWORD"/>
+                                <BR>
+                                    <p id="res"></p>
+                                    <a href="./TRAINERLOG.HTML">
+                                    <input class="td btn" id="btn" type="BUTTON" value="CANCEL"/></a>
+                                    <INPUT class="td btn" id="btn" onclick="signup()" type="button" value="SIGN UP"/>
+      </div>
+      </div>
+      </div>
+      <div class="footer">
+        <div class="container-fluid" id="kom">
+                <h4 >About EDUSPOT</h4>
+                <p class="py-3"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eaque corrupti, odit quibusdam, veritatis voluptatibus quidem at culpa impedit consectetur, expedita alias sunt. Porro ut reprehenderit iusto esse illum. Consectetur.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem debitis eius, ut eos sequi iste voluptatibus magnam alias ratione voluptates ex, autem dolore doloribus accusamus animi quisquam obcaecati maxime.
+                <a  href="./FRONTPAGE.HTML">Learn More</a></p>
+              </div>
+              <span id="flower">© Copyright Vijayavel
+                Developed by <i>Vijayavel</i> 
+              <span class="mt-3 mb-3 p-1">
+                <span class="px-2"><i class="fa-brands fa-twitter"></i></span>
+                <span class="px-2">   <i class="fa-brands fa-facebook"></i></span>
+                <span  class="px-2"> <i class="fa-brands fa-instagram"></i></span>
+                <span  class="px-2"> <i class="fa-brands fa-skype"></i></span>
+                <span  class="px-2"> <i class="fa-brands fa-linkedin-in"></i></span>
+               </span>
+              </span>
+            </div>
+        </div>
+    </div>
+    </form>
+    <script src="./jquery.html"></script>
+  <script src="./bootstrap.min.js"></script>
+</body>
+</html>
